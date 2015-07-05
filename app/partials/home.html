@@ -1,0 +1,29 @@
+<nav id="filter-menu">
+    <ul>
+        <li><a href="" ng-class="{'selected':filterCriteria.approved == ''}" ng-click="changeFilter('')">Todas</a></li>
+        <li><a href="" ng-class="{'selected':(filterCriteria.approved == 'pending')}" ng-click="changeFilter('pending')">Pendientes</a></li>
+        <li><a href="" ng-class="{'selected':(filterCriteria.approved == 'yes')}" ng-click="changeFilter('yes')">Aprobadas</a></li>
+        <li><a href="" ng-class="{'selected':(filterCriteria.approved  == 'no')}" ng-click="changeFilter('no')">Rechazadas</a></li>
+    </ul>
+</nav>
+<section id="inbox">
+    <div ng-repeat="request in requests|filter:filterCriteria" show-details class="request">
+        <span class="employee">{{ request.employee }}</span>
+        <span class="days"><strong>{{request.endDate | amDifference : request.beginDate : 'days' }} días </strong> - desde {{request.beginDate | amDateFormat:'D MMMM YYYY'}}</span>
+        <ul class="actions">
+            <li><a href="" class="yes" ng-class="{'selected':request.approved == 'yes'}" ng-click="changeState(request.activityId, 'yes')"><i class="fa fa-check"></i></a></li>
+            <li><a href="" class="no" ng-class="{'selected':request.approved == 'no'}" ng-click="changeState(request.activityId, 'no')"><i class="fa fa-close"></i></a></li>
+            <li><a href="" class="more"><i class="fa fa-chevron-down"></i></a></li>
+        </ul>
+        <ul class="details">
+            <li>
+                <span class="key">Fecha de solicitud:</span>
+                <span class="value">{{request.requestDate | amDateFormat:'D MMMM YYYY'}}</span>
+            </li>
+            <li>
+                <span class="key">Últimas vacaciones:</span>
+                <span class="value">{{request.lastVacationOn | amDateFormat:'D MMMM YYYY'}}</span>
+            </li>
+        </ul>
+    </div>
+</section>

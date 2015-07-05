@@ -1,0 +1,119 @@
+#filter-menu{
+  position: fixed;
+  width: 100%;
+  top: 54px;
+  z-index: 5;
+  ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 0;
+    li{
+      .inline-block();
+      width: 25%;
+      
+      a{
+        font-size: 14px;
+        display: block;
+        padding: 15px 0;
+        text-align: center;
+        width: 100%;
+        border-bottom: 2px solid #f0f0f0;
+        color: #999;
+        background: #f7f7f7;
+        text-decoration: none;
+        transition: all .7s;
+        border-right: 1px dotted #cdcdcd;
+
+        &:hover{
+          background: #e7e7e7;
+          border-bottom: 2px solid #e0e0e0;
+        }
+
+        &.selected{
+          background: #f0f0f0;
+          border-bottom: 2px solid @light-blue;
+          color: #777;
+        }
+      }
+    }
+  }
+}
+
+#inbox{
+  position: relative;
+  margin-top: 102px;
+  .request{
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    transition: all .7s;
+    cursor:pointer;
+    position: relative;
+
+    &:hover{
+      background: #f7f7f7;
+    }
+
+    .employee{
+      display: block;
+      color: #575757;
+    }
+
+    .days{
+      font-size: 12px;
+      strong{
+        color: @light-blue;
+      }
+    }
+
+    .actions{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      font-size: 0;
+      position: absolute;
+      right: 15px;
+      z-index: 1;
+      top: 15px;
+
+      li{
+        display: inline-block;
+        margin-left: 5px;
+        a{
+          color: #cdcdcd;
+          display: block;
+          font-size: 18px;
+          padding: 7px;
+
+          &.selected{
+            &.yes{
+              color: @light-green;
+            }
+
+            &.no{
+              color: @red;
+            }
+          }
+
+          &.more{
+            color: #575757;
+          }
+        }
+      }
+    }
+
+    .details{
+      display: none;
+      padding: 15px 0 0 25px ;
+      margin: 0;
+      li{
+        padding: 5px 0;
+        font-size: 14px;
+        
+        .key{
+          color: @light-blue;
+        }
+      }
+    }
+  }
+}
