@@ -1,0 +1,23 @@
+{
+  "name": "vacations",
+  "version": "1.0.0",
+  "description": "Application for managing request for employee vacations.",
+  "main": "index.html",
+  "authors": [
+    "José Zumaqué (jezumaquem@gmail.com)"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angularjs": "~1.4.1",
+    "angular-moment": "~0.10.1",
+    "angular-route": "~1.4.1",
+    "fontawesome": "~4.3.0",
+    "angular-resource": "~1.4.1"
+  }
+}
