@@ -29,11 +29,8 @@ vacationsApp.directive 'showDetails', [->
 vacationsApp.factory 'VacationsRequest', ['$http', ($http)->
   services =
     getAll: ->
-      return $http.get('/app/data/inbox.json')
-
-    getRequestById: (requestId)->
-      return $http.get('/app/data/'+requestId+'.json')
-
+      return $http.get('app/data/inbox.json')
+      
   return services
 ]
 vacationsApp.controller 'homeCtrl', ['$scope', 'VacationsRequest', '$filter', ($scope, VacationsRequest, $filter)->

@@ -37,10 +37,7 @@ vacationsApp.factory('VacationsRequest', [
     var services;
     services = {
       getAll: function() {
-        return $http.get('/app/data/inbox.json');
-      },
-      getRequestById: function(requestId) {
-        return $http.get('/app/data/' + requestId + '.json');
+        return $http.get('app/data/inbox.json');
       }
     };
     return services;
